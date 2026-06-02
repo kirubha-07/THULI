@@ -23,7 +23,7 @@ export default function RiskBadge({ risk = 'green', size = 'sm', label }) {
 
   if (risk === 'red') {
     return (
-      <div className="relative inline-flex items-center justify-center">
+      <div className="relative inline-flex animate-pulse items-center justify-center ring-2 ring-red-200 ring-offset-1">
         <div className="absolute h-full w-full rounded-full bg-red-400 opacity-60 animate-ping" />
         {badge}
       </div>

@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { ChevronRight } from 'lucide-react'
 import { children } from '../../data/mockData'
 
 export default function AlertsFeed() {
@@ -21,7 +22,7 @@ export default function AlertsFeed() {
             <button
               key={child.id}
               type="button"
-              className="flex w-full items-center gap-2 sm:gap-3 rounded-lg border-b border-sage/10 px-1.5 sm:px-2 py-2 sm:py-3 text-left transition-colors hover:bg-mint-50 last:border-b-0"
+              className="group flex w-full cursor-pointer items-center gap-2 rounded-lg border-b border-sage/10 px-1.5 py-2 text-left transition-colors hover:bg-[#E8F5EE] last:border-b-0 sm:gap-3 sm:px-2 sm:py-3"
               onClick={() => navigate(`/child/${child.id}`)}
             >
               <span className={`h-9 sm:h-12 w-0.5 sm:w-1 rounded-full ${isRed ? 'bg-alert-red' : 'bg-alert-yellow'}`} />
@@ -43,6 +44,7 @@ export default function AlertsFeed() {
                 <span className="text-xs text-forest-700 hidden sm:inline">{child.lastSeen}</span>
                 <span className="rounded-full bg-mint-100 px-2 sm:px-3 py-0.5 sm:py-1 text-xs text-forest-700 hover:bg-sage/30">View</span>
               </div>
+              <ChevronRight className="h-4 w-4 flex-shrink-0 text-[#8EB69B] opacity-0 transition-opacity group-hover:opacity-100" />
             </button>
           )
         })}

@@ -97,7 +97,7 @@ export default function GovernmentPage() {
         {/* Section 1 — Header */}
         <div className="mb-8 flex items-start justify-between">
           <div>
-            <h1 className="text-3xl font-black text-[#051F20]">District Intelligence Dashboard</h1>
+            <h1 className="text-2xl font-black text-[#051F20]">District Intelligence Dashboard</h1>
             <p className="mt-1 text-sm text-[#235347]">Coimbatore District · Tamil Nadu · Live Analytics</p>
           </div>
           <div className="flex items-center gap-3">

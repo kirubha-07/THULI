@@ -92,7 +92,7 @@ export default function ParentPage() {
         {/* Section 1 — Page Header */}
         <div className="mb-8 flex items-start justify-between">
           <div>
-            <h1 className="text-3xl font-black text-[#051F20]">My Child&apos;s Development</h1>
+            <h1 className="text-2xl font-black text-[#051F20]">My Child&apos;s Development</h1>
             <p className="mt-1 text-sm text-[#235347]">Powered by THULI AI · Updated today</p>
           </div>
           <span className="rounded-full bg-[#051F20] px-4 py-2 font-mono text-xs text-white">

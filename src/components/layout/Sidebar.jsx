@@ -87,8 +87,10 @@ export default function Sidebar({ open, onClose }) {
                   to={item.path}
                   onClick={onClose}
                   className={({ isActive }) =>
-                    `mb-1 flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm transition-colors ${
-                      isActive ? 'bg-forest-800 text-white' : 'text-sage/70 hover:bg-forest-800 hover:text-white'
+                    `mb-1 flex items-center gap-3 rounded-xl border-l-4 px-4 py-2.5 text-sm transition-colors ${
+                      isActive
+                        ? 'border-[#8EB69B] bg-[#163832] text-white'
+                        : 'border-transparent text-sage/70 hover:bg-[#0B2B26] hover:text-white'
                     }`
                   }
                 >

@@ -12,6 +12,10 @@ export default function WorkerView() {
   return (
     <Layout title="Morning Digest" breadcrumb="Centre 12, Ukkadam · Tuesday, 4 March 2025">
       <div className="space-y-4">
+        <div>
+          <h1 className="text-2xl font-black text-[#051F20]">Morning Digest</h1>
+          <p className="mt-0.5 text-sm text-[#235347]">Centre 12, Ukkadam · Tuesday, 4 March 2025</p>
+        </div>
         <div className="flex flex-col justify-between gap-3 rounded-lg sm:rounded-xl bg-forest-800 p-4 sm:p-5 text-white sm:gap-4 lg:flex-row lg:items-center">
           <div>
             <div className="text-lg sm:text-xl font-semibold">Good morning, Meenakshi 👋</div>

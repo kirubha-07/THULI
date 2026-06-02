@@ -41,11 +41,11 @@ export default function StatCard({ value, label, icon: Icon, trend, trendLabel, 
   const hasNumeric = Boolean(digitsOnly)
 
   return (
-    <div className="rounded-lg sm:rounded-xl border border-sage/20 bg-white p-3 sm:p-4 md:p-5 shadow-sm">
+    <div className="rounded-lg border-l-4 border-[#235347] border-sage/20 bg-white p-3 shadow-sm transition-all hover:border-l-[#163832] hover:shadow-sm sm:rounded-xl sm:p-4 md:p-5">
       <div className={`flex h-9 w-9 items-center justify-center rounded-full border sm:h-10 sm:w-10 ${accentStyles[accent] ?? accentStyles.neutral}`}>
         <Icon className="h-4 w-4 sm:h-5 sm:w-5 text-forest-700" />
       </div>
-      <div className="mt-2 sm:mt-3 text-2xl sm:text-3xl font-bold text-forest-950">
+      <div className="mt-2 text-3xl font-black text-forest-950 sm:mt-3">
         {hasNumeric ? (
           <>
             {Math.floor(count)}

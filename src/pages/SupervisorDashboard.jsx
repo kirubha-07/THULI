@@ -11,6 +11,10 @@ export default function SupervisorDashboard() {
   return (
     <Layout title="District Overview" breadcrumb="Coimbatore District · 34 Active Centres · March 2025">
       <div className="space-y-3 sm:space-y-4">
+        <div>
+          <h1 className="text-2xl font-black text-[#051F20]">District Overview</h1>
+          <p className="mt-0.5 text-sm text-[#235347]">Coimbatore District · 34 Active Centres · March 2025</p>
+        </div>
         <div className="grid gap-2 sm:gap-3 md:gap-4 grid-cols-2 sm:grid-cols-2 md:grid-cols-4">
           <StatCard value={stats.totalChildren} label="Total Children Enrolled" icon={Users} trend={12} trendLabel="this month" accent="green" />
           <StatCard value={stats.redFlagged} label="Red Flagged This Week" icon={AlertCircle} trend={4} trendLabel="vs last week" accent="red" />

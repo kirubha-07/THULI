@@ -5,7 +5,7 @@ export default function TopBar({ title, breadcrumb, onMenuClick }) {
   const [showSearch, setShowSearch] = useState(false)
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-20 h-16 border-b border-sage/20 bg-white px-3 shadow-sm sm:px-4 md:left-60 md:px-6">
+    <header className="fixed left-0 right-0 top-0 z-20 h-16 border-b border-[#163832]/50 bg-white px-3 shadow-sm sm:px-4 md:left-60 md:px-6">
       <div className="flex h-full items-center justify-between gap-2 sm:gap-3 md:gap-4">
         <div className="flex items-center gap-3 min-w-0 flex-1">
           <button
@@ -17,7 +17,10 @@ export default function TopBar({ title, breadcrumb, onMenuClick }) {
             <Menu className="h-5 w-5" />
           </button>
           <div className="min-w-0 flex-1">
-            <div className="truncate text-lg font-semibold text-forest-950 sm:text-xl">{title}</div>
+            <div className="flex items-center gap-2">
+              <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-green-400" aria-hidden="true" />
+              <div className="truncate text-lg font-semibold text-forest-950 sm:text-xl">{title}</div>
+            </div>
             <div className="hidden text-xs text-forest-700 sm:block">{breadcrumb}</div>
           </div>
         </div>

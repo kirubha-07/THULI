@@ -41,6 +41,10 @@ export default function ChildProfile() {
   return (
     <Layout title={child.name} breadcrumb={`All Children · ${child.centre}`}>
       <div className="space-y-3 sm:space-y-4">
+        <div>
+          <h1 className="text-2xl font-black text-[#051F20]">{child.name}</h1>
+          <p className="mt-0.5 text-sm text-[#235347]">{child.age} · {child.centre}</p>
+        </div>
         <div className="rounded-lg sm:rounded-xl border border-sage/20 bg-white p-3 sm:p-4 md:p-6 shadow-sm">
           <div className="flex flex-col items-start justify-between gap-4 sm:gap-6 lg:flex-row lg:items-start">
             <div className="space-y-2 sm:space-y-3">

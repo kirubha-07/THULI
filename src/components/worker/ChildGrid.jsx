@@ -53,7 +53,7 @@ export default function ChildGrid() {
           <button
             key={child.id}
             type="button"
-            className="rounded-lg sm:rounded-xl border border-sage/20 bg-white p-2.5 sm:p-3 md:p-4 text-left shadow-sm transition-shadow hover:shadow-md"
+            className="rounded-lg border border-sage/20 bg-white p-2.5 text-left shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-[#235347]/50 sm:rounded-xl sm:p-3 md:p-4"
             onClick={() => navigate(`/child/${child.id}`)}
           >
             <div className="flex items-start justify-between gap-2">

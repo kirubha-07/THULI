@@ -11,41 +11,18 @@ const workflowSteps = [
 ]
 
 const aiModels = [
-  'Sarvam AI — Tamil STT',
-  'Whisper Tiny — Offline STT',
-  'BERT + spaCy — Signal Extraction',
-  'XGBoost → TF Lite — Risk Scoring',
-  'Isolation Forest — Convergence',
-  'ChromaDB + RAG — Guidelines',
-  'Gemma-2B — On-device LLM',
-  'DBSCAN — Hotspot Detection',
+  'Sarvam AI',
+  'Whisper Tiny',
+  'TF Lite',
+  'Gemma 2B',
+  'Claude API',
+  'ChromaDB',
+  'XGBoost',
+  'BERT + spaCy',
+  'DBSCAN',
 ]
 
-const featurePills = ['Offline First', 'Voice AI Tamil', '158M Children', 'Government Ready']
-
-const workerFeatures = [
-  'Voice logging in Tamil',
-  'AI morning digest',
-  'SAM/MAM classifier',
-  'QR attendance',
-  'Auto-reports',
-]
-
-const parentFeatures = [
-  'Domain progress',
-  'Activity tips',
-  'AI alerts',
-  'Worker notes',
-  'USSD access',
-]
-
-const governmentFeatures = [
-  'Risk heatmap',
-  'Referral pipeline',
-  'Centre analytics',
-  'Worker performance',
-  'Export',
-]
+const featurePills = ['Works offline', 'Voice in Tamil', 'Any Android phone', 'No extra steps']
 
 function scrollToSection(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -83,7 +60,7 @@ export default function LandingPage() {
               to="/dashboard"
               className="rounded-lg bg-[#235347] px-4 py-2 text-sm text-white transition-colors hover:bg-[#163832]"
             >
-              Enter Platform
+              Try the Demo
             </Link>
           </div>
         </div>
@@ -92,15 +69,12 @@ export default function LandingPage() {
       {/* Hero */}
       <section className="flex min-h-screen items-center justify-center bg-[#051F20] pt-16">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <span className="mb-8 inline-flex items-center rounded-full border border-[#235347]/40 bg-[#163832] px-4 py-2 text-xs font-medium text-[#8EB69B]">
-            India&apos;s First AI-Native Anganwadi Platform
-          </span>
-
-          <h1 className="text-8xl font-black leading-none tracking-tight text-white">THULI</h1>
-          <p className="mt-2 text-2xl font-light tracking-widest text-[#8EB69B]">துளி</p>
-          <p className="mt-6 text-xl font-light text-[#8EB69B]/80">AI-Powered Early Childhood Development Platform</p>
-          <p className="mt-3 text-sm font-light italic text-[#8EB69B]/50">
-            Because every child begins as a single drop — and no drop should go unseen
+          <h1 className="text-5xl font-black leading-tight tracking-tight text-white sm:text-6xl">
+            Every child deserves to be seen.
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-lg font-light text-[#8EB69B]/90 sm:text-xl">
+            THULI gives India&apos;s Anganwadi workers an AI assistant that works offline, speaks Tamil, and turns daily
+            observations into developmental intelligence.
           </p>
 
           <div className="mt-10 flex justify-center gap-4">
@@ -108,14 +82,14 @@ export default function LandingPage() {
               to="/dashboard"
               className="rounded-xl bg-[#235347] px-8 py-3 text-sm font-semibold text-white transition-all hover:bg-[#163832]"
             >
-              Explore Dashboard →
+              See the Dashboard →
             </Link>
             <button
               type="button"
               onClick={() => scrollToSection('workflow')}
               className="rounded-xl border border-[#8EB69B]/40 px-8 py-3 text-sm font-semibold text-[#8EB69B] transition-all hover:border-[#8EB69B]"
             >
-              How It Works
+              How it works
             </button>
           </div>
 
@@ -136,29 +110,29 @@ export default function LandingPage() {
       <section id="impact" className="border-y border-[#235347]/30 bg-[#0B2B26] py-10">
         <div className="mx-auto grid max-w-4xl grid-cols-4 gap-8 text-center">
           <div>
-            <div className="text-4xl font-black text-white">13.9L</div>
-            <div className="mt-1 text-sm text-[#8EB69B]">Anganwadi centres</div>
+            <div className="text-4xl font-black text-white">35+</div>
+            <div className="mt-1 text-sm text-[#8EB69B]">children per worker daily</div>
           </div>
           <div>
-            <div className="text-4xl font-black text-white">158M</div>
-            <div className="mt-1 text-sm text-[#8EB69B]">Children in ICDS</div>
+            <div className="text-4xl font-black text-white">4 hrs</div>
+            <div className="mt-1 text-sm text-[#8EB69B]">paperwork every morning</div>
           </div>
           <div>
-            <div className="text-4xl font-black text-white">5.8 yrs</div>
-            <div className="mt-1 text-sm text-[#8EB69B]">Average diagnosis age in rural India</div>
+            <div className="text-4xl font-black text-white">Age 3</div>
+            <div className="mt-1 text-sm text-[#8EB69B]">when early support matters most</div>
           </div>
           <div>
-            <div className="text-4xl font-black text-white">70%</div>
-            <div className="mt-1 text-sm text-[#8EB69B]">Worker time lost to paperwork</div>
+            <div className="text-4xl font-black text-white">0</div>
+            <div className="mt-1 text-sm text-[#8EB69B]">internet needed for core features</div>
           </div>
         </div>
       </section>
 
       {/* Problem Section */}
       <section id="features" className="bg-[#E8F5EE] px-6 py-24">
-        <h2 className="text-center text-4xl font-black text-[#051F20]">Three problems. One root cause.</h2>
+        <h2 className="text-center text-4xl font-black text-[#051F20]">The gap no one talks about</h2>
         <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-[#235347]">
-          THULI solves what no existing system does — simultaneously.
+          India has 13.9 lakh Anganwadis. The worker notices everything. The system records nothing.
         </p>
 
         <div className="mx-auto mt-16 grid max-w-5xl grid-cols-3 gap-6">
@@ -166,10 +140,10 @@ export default function LandingPage() {
             <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-full bg-[#051F20]">
               <Clock size={18} color="white" />
             </div>
-            <h3 className="mb-3 text-lg font-bold text-[#051F20]">PS 1.5 — Late Detection</h3>
+            <h3 className="mb-3 text-lg font-bold text-[#051F20]">Too Late, Every Time</h3>
             <p className="text-sm leading-relaxed text-[#235347]">
-              Developmental disorders caught at age 5–6. The optimal intervention window closes at age 3. By the time a
-              diagnosis happens, years of support have been lost.
+              Delays are often spotted only when a child is already 5 or 6. By then, the years when small supports make
+              the biggest difference have already passed.
             </p>
           </div>
 
@@ -177,10 +151,10 @@ export default function LandingPage() {
             <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-full bg-[#163832]">
               <FileText size={18} color="white" />
             </div>
-            <h3 className="mb-3 text-lg font-bold text-white">PS 1.4 — Paperwork Overload</h3>
+            <h3 className="mb-3 text-lg font-bold text-white">Buried in Paperwork</h3>
             <p className="text-sm leading-relaxed text-[#8EB69B]">
-              Workers spend 3–4 hours daily filling 4 paper registers. No smart tools. No AI assistance. Meaningful time
-              with children — lost.
+              Workers spend hours each morning filling registers by hand. There is no smart tool, no voice help, and
+              less time left for the children who need them most.
             </p>
           </div>
 
@@ -188,10 +162,10 @@ export default function LandingPage() {
             <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-full bg-[#051F20]">
               <AlertTriangle size={18} color="white" />
             </div>
-            <h3 className="mb-3 text-lg font-bold text-[#051F20]">PS 1.3 — No Tracking System</h3>
+            <h3 className="mb-3 text-lg font-bold text-[#051F20]">Invisible Development</h3>
             <p className="text-sm leading-relaxed text-[#235347]">
-              Child development across 5 domains — Physical, Language, Cognitive, Social-Emotional, Self-Care — never
-              tracked. Parents receive no guidance.
+              A child&apos;s growth across language, movement, learning, emotions, and self-care is rarely tracked in one
+              place. Parents are left without guidance. Concerns disappear into notebooks.
             </p>
           </div>
         </div>
@@ -199,8 +173,10 @@ export default function LandingPage() {
 
       {/* How It Works */}
       <section id="workflow" className="bg-white px-6 py-24">
-        <h2 className="text-center text-4xl font-black text-[#051F20]">How THULI works</h2>
-        <p className="mt-4 text-center text-lg text-[#235347]">One worker action. Three problems solved.</p>
+        <h2 className="text-center text-4xl font-black text-[#051F20]">One observation. Everything updates.</h2>
+        <p className="mt-4 text-center text-lg text-[#235347]">
+          The worker speaks. THULI listens. Three problems solved in one sentence.
+        </p>
 
         <div className="mx-auto mt-16 flex max-w-5xl items-start justify-center">
           {workflowSteps.map((step, index) => (
@@ -222,66 +198,48 @@ export default function LandingPage() {
 
       {/* Three Portals */}
       <section id="portals" className="bg-[#E8F5EE] px-6 py-24">
-        <h2 className="text-center text-4xl font-black text-[#051F20]">Built for everyone in the ecosystem</h2>
+        <h2 className="text-center text-4xl font-black text-[#051F20]">Built for everyone who cares for a child</h2>
 
         <div className="mx-auto mt-16 grid max-w-5xl grid-cols-3 gap-6">
-          <div className="rounded-2xl bg-[#051F20] p-8">
+          <div className="flex flex-col rounded-2xl bg-[#051F20] p-8">
             <h3 className="text-2xl font-black text-white">Worker Portal</h3>
-            <p className="mt-1 text-sm text-[#8EB69B]">Meenakshi&apos;s daily tool</p>
-            <ul className="mt-6 space-y-2">
-              {workerFeatures.map((item) => (
-                <li key={item} className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#235347]" />
-                  <span className="text-sm text-[#8EB69B]">{item}</span>
-                </li>
-              ))}
-            </ul>
+            <p className="mt-4 flex-1 text-sm leading-relaxed text-[#8EB69B]">
+              The daily AI assistant for the Anganwadi worker. Voice-first. Offline. Tamil.
+            </p>
             <button
               type="button"
               onClick={() => navigate('/worker')}
               className="mt-8 w-full rounded-xl bg-[#235347] py-3 text-sm font-semibold text-white transition-colors hover:bg-[#163832]"
             >
-              Enter Worker Portal
+              Open →
             </button>
           </div>
 
-          <div className="rounded-2xl border-2 border-[#163832] bg-white p-8">
+          <div className="flex flex-col rounded-2xl border-2 border-[#163832] bg-white p-8">
             <h3 className="text-2xl font-black text-[#051F20]">Parent Portal</h3>
-            <p className="mt-1 text-sm text-[#235347]">Know your child&apos;s growth</p>
-            <ul className="mt-6 space-y-2">
-              {parentFeatures.map((item) => (
-                <li key={item} className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#235347]" />
-                  <span className="text-sm text-[#235347]">{item}</span>
-                </li>
-              ))}
-            </ul>
+            <p className="mt-4 flex-1 text-sm leading-relaxed text-[#235347]">
+              See your child&apos;s development week by week. Activities. Alerts. In your language.
+            </p>
             <button
               type="button"
               onClick={() => navigate('/parent')}
               className="mt-8 w-full rounded-xl bg-[#163832] py-3 text-sm font-semibold text-white transition-colors hover:bg-[#235347]"
             >
-              Enter Parent Portal
+              Open →
             </button>
           </div>
 
-          <div className="rounded-2xl bg-[#163832] p-8">
+          <div className="flex flex-col rounded-2xl bg-[#163832] p-8">
             <h3 className="text-2xl font-black text-white">Government Portal</h3>
-            <p className="mt-1 text-sm text-[#8EB69B]">District-level intelligence</p>
-            <ul className="mt-6 space-y-2">
-              {governmentFeatures.map((item) => (
-                <li key={item} className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#235347]" />
-                  <span className="text-sm text-[#8EB69B]">{item}</span>
-                </li>
-              ))}
-            </ul>
+            <p className="mt-4 flex-1 text-sm leading-relaxed text-[#8EB69B]">
+              District-level intelligence. Know which blocks need attention before the crisis.
+            </p>
             <button
               type="button"
               onClick={() => navigate('/government')}
               className="mt-8 w-full rounded-xl bg-[#051F20] py-3 text-sm font-semibold text-white transition-colors hover:bg-[#0B2B26]"
             >
-              Enter Government Portal
+              Open →
             </button>
           </div>
         </div>
@@ -289,8 +247,10 @@ export default function LandingPage() {
 
       {/* AI Stack */}
       <section className="bg-white px-6 py-20">
-        <h2 className="text-center text-4xl font-black text-[#051F20]">8 AI models working silently</h2>
-        <p className="mt-4 text-center text-[#235347]">Every model has one specific job. None are optional.</p>
+        <h2 className="text-center text-4xl font-black text-[#051F20]">The AI stack behind THULI</h2>
+        <p className="mt-4 text-center text-[#235347]">
+          Eight models, each with one job. All running on a basic Android phone.
+        </p>
 
         <div className="mx-auto mt-12 flex max-w-3xl flex-wrap justify-center gap-3">
           {aiModels.map((model) => (
@@ -308,27 +268,22 @@ export default function LandingPage() {
       <section className="bg-[#E8F5EE] px-6 py-24">
         <div className="mx-auto grid max-w-5xl grid-cols-2 items-center gap-16">
           <div>
-            <div className="font-serif text-8xl leading-none text-[#8EB69B]/30">&ldquo;</div>
-            <p className="text-lg italic leading-relaxed text-[#235347]">
-              Meenakshi, an Anganwadi worker near Coimbatore, noticed Riya — 20 months old — hadn&apos;t responded to her
-              name in three weeks. Hadn&apos;t said a word. She noticed everything.
+            <p className="text-lg leading-relaxed text-[#235347]">
+              Meenakshi walks into a room of 35 children every morning.
+              <br />
+              She fills four paper registers. She notices Riya isn&apos;t speaking.
+              <br />
+              She notices Karthik hasn&apos;t gained weight in two months.
+              <br />
+              She notices Priya cries every single morning.
             </p>
-            <p className="mt-4 text-lg italic leading-relaxed text-[#235347]">
-              But no system existed to turn what she noticed into action.
-            </p>
-            <p className="mt-6 text-xl font-bold text-[#051F20]">
-              Riya was diagnosed with autism at age 5. Three years after the optimal window had closed.
-            </p>
+            <p className="mt-6 text-xl font-bold text-[#051F20]">She notices. But nothing happens.</p>
           </div>
 
           <div className="rounded-2xl bg-[#051F20] p-10">
-            <p className="text-sm text-[#8EB69B]">The information existed at the Anganwadi level.</p>
-            <p className="mt-3 text-2xl font-black text-white">The system to act on it — did not.</p>
-            <p className="mt-4 text-lg text-[#8EB69B]">THULI changes that.</p>
-            <div className="mt-8 border-t border-[#235347] pt-8">
-              <p className="text-sm text-[#8EB69B]">Every other system identifies delays.</p>
-              <p className="mt-2 text-base font-bold text-white">THULI predicts them — and closes the loop.</p>
-            </div>
+            <p className="text-sm text-[#8EB69B]">Not because she doesn&apos;t care.</p>
+            <p className="mt-3 text-2xl font-black text-white">Because no system exists to act on what she sees.</p>
+            <p className="mt-4 text-lg text-[#8EB69B]">THULI is that system.</p>
           </div>
         </div>
       </section>
@@ -384,7 +339,7 @@ export default function LandingPage() {
         </div>
 
         <div className="mx-auto mt-12 max-w-5xl border-t border-[#163832] pt-8 text-center text-xs text-[#8EB69B]/40">
-          © 2026 THULI · Empowering India&apos;s children with AI
+          © 2026 Team ZENQ · THULI · Empowering India&apos;s children with AI
         </div>
       </footer>
     </div>

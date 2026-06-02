@@ -1,8 +1,14 @@
 import { useNavigate } from 'react-router-dom'
+import { CalendarCheck, FileText } from 'lucide-react'
 import Layout from '../components/layout/Layout'
 import RiskBadge from '../components/ui/RiskBadge'
 import ChildAvatar from '../components/ui/ChildAvatar'
 import { children, workers } from '../data/mockData'
+
+const sectionIcons = {
+  attendance: CalendarCheck,
+  reports: FileText,
+}
 
 export default function SectionPage({ title, breadcrumb, section }) {
   const navigate = useNavigate()
@@ -18,16 +24,6 @@ export default function SectionPage({ title, breadcrumb, section }) {
       intro: 'View worker coverage, child counts, and supervision scores across the district.',
       list: workers,
     },
-    referrals: {
-      headline: 'Referral operations',
-      intro: 'This view is a lightweight demo shell for the referral workflow and follow-up queue.',
-      list: [],
-    },
-    analytics: {
-      headline: 'Performance analytics',
-      intro: 'Use the dashboard cards and charts to explain district trends during the demo.',
-      list: [],
-    },
     attendance: {
       headline: 'Attendance log',
       intro: 'Track daily worker attendance and centre activity from a single place.',
@@ -40,13 +36,17 @@ export default function SectionPage({ title, breadcrumb, section }) {
     },
   }[section]
 
+  const EmptyIcon = sectionIcons[section]
+
   return (
     <Layout title={title} breadcrumb={breadcrumb}>
       <div className="space-y-4">
-        <div className="rounded-xl border border-sage/20 bg-white p-6 shadow-sm">
-          <div className="text-2xl font-semibold text-forest-950">{content.headline}</div>
-          <div className="mt-1 text-sm text-forest-700">{content.intro}</div>
-        </div>
+        {section === 'children' || section === 'workers' ? (
+          <div className="rounded-xl border border-sage/20 bg-white p-6 shadow-sm">
+            <div className="text-2xl font-semibold text-forest-950">{content.headline}</div>
+            <div className="mt-1 text-sm text-forest-700">{content.intro}</div>
+          </div>
+        ) : null}
 
         {section === 'children' ? (
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -80,22 +80,13 @@ export default function SectionPage({ title, breadcrumb, section }) {
               </div>
             ))}
           </div>
-        ) : (
-          <div className="grid gap-4 md:grid-cols-3">
-            <div className="rounded-xl border border-sage/20 bg-white p-4 shadow-sm">
-              <div className="text-sm font-semibold text-forest-950">Queue status</div>
-              <div className="mt-1 text-xs text-forest-700">No blockers in the demo prototype.</div>
-            </div>
-            <div className="rounded-xl border border-sage/20 bg-white p-4 shadow-sm">
-              <div className="text-sm font-semibold text-forest-950">Action needed</div>
-              <div className="mt-1 text-xs text-forest-700">Use the sidebar and dashboard cards to jump into any case.</div>
-            </div>
-            <div className="rounded-xl border border-sage/20 bg-white p-4 shadow-sm">
-              <div className="text-sm font-semibold text-forest-950">Mock data</div>
-              <div className="mt-1 text-xs text-forest-700">All content is driven from local sample data with no backend dependency.</div>
-            </div>
+        ) : EmptyIcon ? (
+          <div className="mx-auto mt-12 max-w-md rounded-2xl bg-[#E8F5EE] p-16 text-center">
+            <EmptyIcon className="mx-auto mb-4 h-12 w-12 text-[#8EB69B]" />
+            <div className="text-xl font-bold text-[#051F20]">Coming soon</div>
+            <div className="mt-2 text-sm text-[#235347]">This section is under development</div>
           </div>
-        )}
+        ) : null}
       </div>
     </Layout>
   )

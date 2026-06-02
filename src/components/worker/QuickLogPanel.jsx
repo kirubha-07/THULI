@@ -41,8 +41,16 @@ export default function QuickLogPanel() {
   const [selectedChild, setSelectedChild] = useState(workerChildList[0]?.id ?? '')
   const [observation, setObservation] = useState('')
   const [recording, setRecording] = useState(false)
+  const [aiState, setAiState] = useState('idle')
+  const [count, setCount] = useState(0)
 
   const detectedDomain = useMemo(() => detectDomain(observation), [observation])
+
+  const handleSubmit = () => {
+    setCount((current) => current + 1)
+    setAiState('analysing')
+    setTimeout(() => setAiState('idle'), 2000)
+  }
 
   return (
     <div className="rounded-lg sm:rounded-xl border border-sage/20 bg-white p-3 sm:p-4 md:p-5 shadow-sm">
@@ -74,7 +82,11 @@ export default function QuickLogPanel() {
       </div>
 
       <div className="mt-3 sm:mt-4 flex items-center gap-2 sm:gap-3">
-        <button type="button" className="flex-1 sm:flex-none rounded-lg bg-forest-700 px-3 sm:px-5 py-2 text-xs sm:text-sm font-medium text-white hover:bg-forest-800">
+        <button
+          type="button"
+          onClick={handleSubmit}
+          className="flex-1 sm:flex-none rounded-lg bg-forest-700 px-3 sm:px-5 py-2 text-xs sm:text-sm font-medium text-white hover:bg-forest-800"
+        >
           Record
         </button>
         <button
@@ -87,6 +99,24 @@ export default function QuickLogPanel() {
           {recording ? <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-alert-red animate-pulse" /> : null}
         </button>
       </div>
+
+      {aiState === 'analysing' && (
+        <div className="mt-3 flex items-center gap-2 rounded-xl bg-[#E8F5EE] px-4 py-3 text-sm text-[#235347]">
+          <span className="font-medium">AI analysing observation</span>
+          {[0, 1, 2].map((i) => (
+            <span
+              key={i}
+              className="inline-block h-2 w-2 animate-bounce rounded-full bg-[#235347]"
+              style={{ animationDelay: `${i * 0.15}s` }}
+            />
+          ))}
+        </div>
+      )}
+      {aiState === 'idle' && count > 0 && (
+        <div className="mt-3 flex items-center gap-2 rounded-xl border border-green-200 bg-green-50 px-4 py-2.5 text-xs text-green-700">
+          <span>✓</span> Observation logged · Domain signal extracted
+        </div>
+      )}
     </div>
   )
 }

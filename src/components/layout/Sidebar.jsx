@@ -5,6 +5,8 @@ import {
   BarChart2,
   CalendarCheck,
   FileText,
+  Home,
+  Landmark,
   LayoutDashboard,
   LogOut,
   Sun,
@@ -24,18 +26,24 @@ function DropMark() {
 }
 
 const supervisorItems = [
+  { label: 'Home / Landing', path: '/', icon: Home },
   { label: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
   { label: 'Children', path: '/children', icon: Users },
   { label: 'Workers', path: '/workers', icon: UserCheck },
   { label: 'Referrals', path: '/referrals', icon: ArrowRightLeft },
   { label: 'Analytics', path: '/analytics', icon: BarChart2 },
+  { label: 'Parent Portal', path: '/parent', icon: Baby },
+  { label: 'Govt View', path: '/government', icon: Landmark },
 ]
 
 const workerItems = [
+  { label: 'Home / Landing', path: '/', icon: Home },
   { label: 'Morning Digest', path: '/worker', icon: Sun },
   { label: 'My Children', path: '/children', icon: Baby },
   { label: 'Attendance', path: '/attendance', icon: CalendarCheck },
   { label: 'Reports', path: '/reports', icon: FileText },
+  { label: 'Parent Portal', path: '/parent', icon: Baby },
+  { label: 'Govt View', path: '/government', icon: Landmark },
 ]
 
 export default function Sidebar({ open, onClose }) {

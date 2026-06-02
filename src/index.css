@@ -40,3 +40,9 @@ textarea {
 ::-webkit-scrollbar-thumb:hover {
   background: #235347;
 }
+
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.page-enter { animation: pageIn 0.25s ease-out forwards; }

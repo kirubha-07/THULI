@@ -17,5 +17,18 @@ export default function RiskBadge({ risk = 'green', size = 'sm', label }) {
   const config = riskStyles[risk] ?? riskStyles.green
   const sizeClasses = size === 'lg' ? 'px-5 py-2 text-sm font-semibold' : 'px-3 py-1 text-xs font-medium'
 
-  return <span className={`inline-flex items-center rounded-full ${sizeClasses} ${config.wrapper}`}>{label ?? config.label}</span>
+  const badge = (
+    <span className={`inline-flex items-center rounded-full ${sizeClasses} ${config.wrapper}`}>{label ?? config.label}</span>
+  )
+
+  if (risk === 'red') {
+    return (
+      <div className="relative inline-flex items-center justify-center">
+        <div className="absolute h-full w-full rounded-full bg-red-400 opacity-60 animate-ping" />
+        {badge}
+      </div>
+    )
+  }
+
+  return badge
 }
